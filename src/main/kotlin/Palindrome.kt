@@ -1,13 +1,15 @@
 package org.palindrome
 
 /**
- * Creates a list of an integer's digits in order, from most significant
- * to least significant.
+ * Creates a list of a positive integer's digits in order, from most
+ * significant to least significant.
  *
- * @param integer integer to be converted to a list of its digits
+ * @param integer positive integer to be converted to a list of its digits
  * @return list of the integer's digits in order of decreasing significance
+ * @throws IllegalArgumentException if integer is negative
  */
 fun digitList(integer: Int): List<Int> {
+    if (integer < 0) throw IllegalArgumentException("Integer must be positive")
     val intList: MutableList<Int> = mutableListOf()
     for (digit in integer.toString()) {
         intList.add(digit.code - 48)
@@ -72,9 +74,11 @@ fun assemble(digits: List<Int>): Int {
  *
  * @param palindromicInt a positive integer whose digits form a palindrome
  * @return the next largest integer whose digits form a palindrome
+ * @throws IllegalArgumentException if integer is not a palindrome
  */
 fun nextPalindrome(palindromicInt: Int): Int {
     val digits: List<Int> = digitList(palindromicInt)
+    if (digits != digits.reversed()) throw IllegalArgumentException("Integer is not a palindrome")
     val nextDigits: List<Int> = nextPalindromeDigits(digits)
     return assemble(nextDigits)
 }
