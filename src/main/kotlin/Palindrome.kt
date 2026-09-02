@@ -9,12 +9,7 @@ package org.palindrome
  * @throws IllegalArgumentException if integer is negative
  */
 fun digitList(integer: Int): List<Int> {
-    if (integer < 0) throw IllegalArgumentException("Integer must be positive")
-    val intList: MutableList<Int> = mutableListOf()
-    for (digit in integer.toString()) {
-        intList.add(digit.code - 48)
-    }
-    return intList.toList()
+    return integer.toString().map { digit -> digit.code - 48 }
 }
 
 
@@ -60,11 +55,7 @@ fun nextPalindromeDigits(digits: List<Int>): List<Int> {
  * @return the integer formed from the list of digits in order
  */
 fun assemble(digits: List<Int>): Int {
-    var integer: Int = 0
-    for (digit in digits) {
-        integer = (integer * 10) + digit
-    }
-    return integer
+    return digits.reduce { integer, digit -> integer * 10 + digit }
 }
 
 
