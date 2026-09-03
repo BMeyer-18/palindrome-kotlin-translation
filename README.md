@@ -24,11 +24,11 @@ are necessary, or why immutable lists are the default. The biggest
 difference was at the end, where what took me one line (the return line) in 
 Python wound up taking me 6 lines in Kotlin. Python allows much simpler 
 syntax for list formation, so I could just return 
-`[1] + (len(digits) - 1) * [0] + [1]` in Python when the number had 9s as its 
-outermost digits on either side (i.e. 909 becomes 1001). Kotlin didn't allow 
-for this syntax, so I used a for loop to do the same thing. This required a 
-very specific piece of functionality that isn't needed often, but Python made 
-that a bit easier than Kotlin, so Python wins this one.  
+`[1] + (len(digits) - 1) * [0] + [1]` in Python when the number had 9s for all 
+of its digits (i.e. 999 becomes 1001). Kotlin didn't allow  this syntax, so I 
+used a for loop to do the same thing. This required a very specific piece of 
+functionality that isn't needed often, but Python made that a bit easier than 
+Kotlin, so Python wins this one.  
 
 The third function is `assemble`, which takes a list of digits and combines 
 them into one integer. The implementation was simple in Python, using a for 
