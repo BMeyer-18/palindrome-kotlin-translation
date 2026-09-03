@@ -52,7 +52,7 @@ between files. I also worry that multidimensional lists could be hard to work wi
 in Kotlin, as `List<List<Int>>` felt a little clunky to write.  
 
 All in all, translating wasn't as daunting of a task as I thought it would be. 
-Kotlin is fairly intuitive, and my knowledge of TypeScript and Java made it  
+Kotlin is fairly intuitive, and my knowledge of TypeScript and Java made it 
 fairly easy to learn. The hardest part was working with IntelliJ IDEA and realizing 
 that I needed a whole Kotlin project, not just a script in order to share functions 
 between files. I still don't see the advantage to using Kotlin instead of 
